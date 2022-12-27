@@ -97,7 +97,7 @@ const NavBar = () => {
                                 <MenuItem as={NextLink} href="/works" passHref>Works</MenuItem>
                                 <MenuItem
                                 as={NextLink}
-                                href="https://github.com/craftzdog/craftzdog-homepage"
+                                href="https://github.com/aeyll-11"
                                 target=' _blank' 
                                 >
                                     Source
