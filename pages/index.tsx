@@ -25,9 +25,9 @@ export default function Home() {
         h={[280, 480, 540]}>
       <Canvas shadows dpr={[1, 10]}>
         <Suspense fallback={<Loader />}>
-          <Stage controls={refContainer} preset="rembrandt"></Stage>
+          <Stage controls={refContainer} preset="portrait" shadows="accumulative" adjustCamera={false}></Stage>
           <Model refContainer={refContainer}/>
-          <OrbitControls />
+          <OrbitControls autoRotate autoRotateSpeed={0.5}/>
         </Suspense>
       </Canvas>
     </Box>

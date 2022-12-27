@@ -70,7 +70,6 @@ const NavBar = () => {
                     width={{ base: 'full', md: 'auto' }}
                     alignItems="center"
                     flexGrow={1}
-                    mt={{ base: 4, md: 0 }}
                 >
                     <LinkItem href='/works' path={path}>
                         Works
@@ -87,7 +86,6 @@ const NavBar = () => {
 
                 <Box display="flex" >
                     <ThemeToggleButton></ThemeToggleButton>
-                        
                     <Box ml={2} display={{ base: 'inline-block', md: 'none' }} m="auto">
                         <Menu isLazy id="navbar-menu">
                             <MenuButton ml={2}>
