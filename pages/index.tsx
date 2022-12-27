@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { useRef, Suspense } from 'react';
 import NextLink from 'next/link'
 import {Container, Box, Heading, useColorModeValue, Image, Button}from '@chakra-ui/react';
 import Section from '../components/section';
@@ -6,11 +7,30 @@ import Paragraph from '../components/paragraph';
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import { useRouter } from 'next/router';
 import { BioSection, BioYear } from '../components/bio';
+import Model from '../components/model';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls, Stage } from '@react-three/drei'
+
 
 export default function Home() {
   const router = useRouter();
+  const refContainer = useRef();;
+
   return (
    <Container mt={10}>
+    <Box 
+        mb={3} 
+        m-auto     
+        w="100%"
+        h={[280, 480, 540]}>
+      <Canvas shadows dpr={[1, 10]}>
+        <Suspense fallback={null}>
+          <Stage controls={refContainer} preset="rembrandt"></Stage>
+          <Model refContainer={refContainer}/>
+          <OrbitControls />
+        </Suspense>
+      </Canvas>
+    </Box>
     <Box
       borderRadius="lg"
       mb={6}
@@ -45,7 +65,6 @@ export default function Home() {
             overflow="hidden"
           >
             <Image src='/pp.jpeg' alt='Aeyll'/>
-            
           </Box>
         </Box>
 
@@ -89,6 +108,15 @@ export default function Home() {
           Langues étrangères appliquées Anglais & Coréen - Université Jean Moulin
         </BioSection>
       </Section>
+      <Section delay={0.8}>
+        <Heading as="h3" variant="section-title">
+          Stack 
+        </Heading>
+        <Paragraph>
+          React, PReact, NextJs, React Native, Vue.js, NestJs, Tailwind, ChakraUi, Flutter, Laravel, Lumen, Jest, Pest.
+        </Paragraph>
+      </Section>
+      
    </Container>
   )
 }

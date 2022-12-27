@@ -103,7 +103,7 @@ const NavBar = () => {
                                 href="https://github.com/craftzdog/craftzdog-homepage"
                                 >
                                     Source
-                                    <Box ml={3}>
+                                    <Box mr={4}>
                                         <IoLogoGithub/>
                                     </Box>
                                 </MenuItem>
