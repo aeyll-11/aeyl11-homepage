@@ -17,7 +17,7 @@ export default function Home() {
   const refContainer = useRef();;
 
   return (
-   <Container mt={10}>
+   <Container>
     <Box 
         mb={3} 
         m-auto     
@@ -80,8 +80,8 @@ export default function Home() {
         me balader et faire du sport.
         </Paragraph>
         <Box textAlign="center" my={4}>
-          <NextLink href="/work" passHref scroll={false}>
-            <Button rightIcon={<ChevronRightIcon />} colorScheme="teal" onClick={() => router.push('/work')}>
+          <NextLink href="/works" passHref scroll={false}>
+            <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
               My portfolio
             </Button>
           </NextLink>
@@ -114,6 +114,14 @@ export default function Home() {
         </Heading>
         <Paragraph>
           React, PReact, NextJs, React Native, Vue.js, NestJs, Tailwind, ChakraUi, Flutter, Laravel, Lumen, Jest, Pest.
+        </Paragraph>
+      </Section>
+      <Section delay={0.8}>
+        <Heading as="h3" variant="section-title">
+          I &hearts;
+        </Heading>
+        <Paragraph>
+          Art, Tech, Jeux videos, Jiu-Jitsu, Musique.
         </Paragraph>
       </Section>
       

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import NavBar from './navbar';
 import Fonts from '../font';
 import Section from '../section';
-
+import Footer from './footer';
 const Main = ({children}: any,{router}: AppProps) => {
     return (
         <Box as="main">
@@ -16,6 +16,7 @@ const Main = ({children}: any,{router}: AppProps) => {
                     {children}
                 </Container>
             </Section>
+            <Footer />
         </Box>
     )
 }
