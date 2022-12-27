@@ -11,8 +11,8 @@ const ThemeToggleButton = () => {
     <AnimatePresence initial={false}>
       <motion.div
         key={useColorModeValue('light', 'dark')}
-        initial={{y: '-20px' , opacity: 0 }}
-        animate={{y: '0px', opacity: 1 }}
+        initial={{x: '-20px' , opacity: 0 }}
+        animate={{x: '0px', opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
         <IconButton

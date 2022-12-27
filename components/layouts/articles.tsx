@@ -16,11 +16,9 @@ const Layout = ({ children, title }: Props) => {
   const t = `${title} - Taguine Idriss`
   return (
     <motion.article
-      variants={variants}
-      transition={{ duration: 0.4, type: 'easeInOut' }}
+      transition={{ duration: 5, type: 'easeInOut' }}
       style={{ position: 'relative' }}
     >
-      <>
         {title && (
           <Head>
             <title>{t}</title>
@@ -29,7 +27,6 @@ const Layout = ({ children, title }: Props) => {
           </Head>
         )}
         {children}
-      </>
     </motion.article>
   )
 }

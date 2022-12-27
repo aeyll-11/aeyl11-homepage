@@ -7,7 +7,7 @@ import { AnimatePresence } from 'framer-motion';
 export default function App({ Component, pageProps, router }: AppProps) {
   return (
       <ChakraProvider theme={theme}>
-        <Layout>
+        <Layout router={router}>
         <AnimatePresence
           initial={true}
           onExitComplete={() => {

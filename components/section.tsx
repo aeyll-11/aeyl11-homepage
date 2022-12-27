@@ -16,7 +16,7 @@ const Section = ({ children, delay }: Props) => (
       <AnimatePresence initial={true}>
       <motion.div
         key={useColorModeValue('light', 'dark')}
-        initial={{y: '30px' , opacity: 0 }}
+        initial={{y: '20px' , opacity: 0 }}
         animate={{y: '0px', opacity: 1 }}
         transition={{ duration: delay }}
       >

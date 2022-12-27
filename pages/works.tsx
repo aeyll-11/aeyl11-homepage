@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { Heading, Container} from '@chakra-ui/react';
 import Layout from '../components/layouts/articles';
 
-const Work = () => {return (
+const Works = () => {return (
     <Layout title="Works">
       <Container>
         <Heading as="h3" fontSize={20} mb={4}>
@@ -12,4 +12,4 @@ const Work = () => {return (
     </Layout>
   )}
 
-export default Work;
+export default Works;

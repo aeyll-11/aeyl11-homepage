@@ -5,6 +5,7 @@ import Section from '../components/section';
 import Paragraph from '../components/paragraph';
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import { useRouter } from 'next/router';
+import { BioSection, BioYear } from '../components/bio';
 
 export default function Home() {
   const router = useRouter();
@@ -25,7 +26,7 @@ export default function Home() {
           <Heading as="h2" variant="page-title">
             Taguine Idriss
           </Heading>
-          <p>Digital Craftsman ( Artiste/Full-Stack Developpeur)</p>
+          <p>Digital Craftsman (Artiste/Full-Stack Developpeur)</p>
         </Box>
         <Box
           flexShrink={0}
@@ -54,11 +55,10 @@ export default function Home() {
           Work
         </Heading>
         <Paragraph>
-          Idriss is a full-stack developer based in Lyon with a
-          passion for building digital services/stuff he wants. He has a knack
-          for all things launching products, from planning and designing all the
-          way to solving real-life problems with code. When not online, he loves
-          hanging out with his camera.
+          Je suis un développeur full-stack basé à Lyon avec une
+        passion pour la création numériques. Jaime la planification et la conception des
+        moyens pour résoudre de real-life problems avec du code. Lorsque je ne suis pas en ligne, Jaime
+        me balader et faire du sport.
         </Paragraph>
         <Box textAlign="center" my={4}>
           <NextLink href="/work" passHref scroll={false}>
@@ -67,6 +67,27 @@ export default function Home() {
             </Button>
           </NextLink>
         </Box>
+      </Section>
+      <Section delay={0.4}>
+        <Heading as="h3" variant="section-title">
+          Bio
+        </Heading>
+        <BioSection>
+          <BioYear>2022 to now</BioYear>
+            Développeur Full Stack - Hello CSE
+        </BioSection>
+        <BioSection>
+          <BioYear>2021</BioYear>
+          Développeur Full Stack - DAF Assurance
+        </BioSection>
+        <BioSection>
+          <BioYear>2021</BioYear>
+          Diplome Développeur web et web mobile - It Akademy
+        </BioSection>
+        <BioSection>
+          <BioYear>2018</BioYear>
+          Langues étrangères appliquées Anglais & Coréen - Université Jean Moulin
+        </BioSection>
       </Section>
    </Container>
   )

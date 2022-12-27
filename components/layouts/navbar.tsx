@@ -4,6 +4,7 @@ import { Box, useColorModeValue, Stack, Link, Heading, Flex, Container, Menu, Me
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { IoLogoGithub } from 'react-icons/io5'
 import ThemeToggleButton from '../theme-toggle-button';
+import { useRouter } from 'next/router';
 
 interface LinkItemProps {
     href: string;
@@ -35,8 +36,9 @@ const LinkItem = ({ href, path, target, children, ...props }: LinkItemProps) => 
     )
 }
 
-const NavBar = (props: { path: any; }) => {
-    const {path} = props;
+const NavBar = () => {
+    const router = useRouter();
+    const path = router.asPath;
     return(
         <Box
             as="nav"
@@ -45,7 +47,6 @@ const NavBar = (props: { path: any; }) => {
             bg={useColorModeValue('#ffffff40', '#20202380')}
             css={{ backdropFilter: 'blur(10px)' }}
             zIndex={2}
-            {...props}
         >
             <Container
                 display="flex"
@@ -75,7 +76,7 @@ const NavBar = (props: { path: any; }) => {
                     </LinkItem>
                     <LinkItem
                         target="_blank"
-                        href="https://github.com/aeyll-11/aeyll-portfolio"
+                        href="https://github.com/aeyll-11/aeyl11-homepage"
                         path={path}
                     >
                         <IoLogoGithub />
@@ -83,7 +84,7 @@ const NavBar = (props: { path: any; }) => {
                     </LinkItem>
                 </Stack>
 
-                <Box>
+                <Box display="flex" >
                     <ThemeToggleButton></ThemeToggleButton>
                         
                     <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
@@ -95,23 +96,16 @@ const NavBar = (props: { path: any; }) => {
                                 aria-label="Options"
                             />
                             <MenuList>
-                                <NextLink href="/" passHref>
-                                <MenuItem as={Link}>About</MenuItem>
-                                </NextLink>
-                                <NextLink href="/works" passHref>
-                                <MenuItem as={Link}>Works</MenuItem>
-                                </NextLink>
-                                <NextLink href="/posts" passHref>
-                                <MenuItem as={Link}>Posts</MenuItem>
-                                </NextLink>
-                                <NextLink href="https://uses.craftz.dog/" passHref>
-                                <MenuItem as={Link}>Uses</MenuItem>
-                                </NextLink>
+                                <MenuItem as={NextLink} href="/" passHref>About</MenuItem>
+                                <MenuItem as={NextLink} href="/works" passHref>Works</MenuItem>
                                 <MenuItem
-                                as={Link}
+                                as={NextLink}
                                 href="https://github.com/craftzdog/craftzdog-homepage"
                                 >
-                                View Source
+                                    Source
+                                    <Box ml={3}>
+                                        <IoLogoGithub/>
+                                    </Box>
                                 </MenuItem>
                             </MenuList>
                         </Menu>
