@@ -87,30 +87,28 @@ const NavBar = () => {
                 <Box display="flex" >
                     <ThemeToggleButton></ThemeToggleButton>
                         
-                    <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
+                    <Box ml={2} display={{ base: 'inline-block', md: 'none' }} m="auto">
                         <Menu isLazy id="navbar-menu">
-                            <MenuButton
-                                as={IconButton}
-                                icon={<HamburgerIcon />}
-                                variant="outline"
-                                aria-label="Options"
-                            />
+                            <MenuButton ml={2}>
+                                    <HamburgerIcon></HamburgerIcon>
+                            </MenuButton>
                             <MenuList>
                                 <MenuItem as={NextLink} href="/" passHref>About</MenuItem>
                                 <MenuItem as={NextLink} href="/works" passHref>Works</MenuItem>
                                 <MenuItem
                                 as={NextLink}
                                 href="https://github.com/craftzdog/craftzdog-homepage"
+                                target=' _blank' 
                                 >
                                     Source
-                                    <Box mr={4}>
+                                    <Box ml={4}>
                                         <IoLogoGithub/>
                                     </Box>
                                 </MenuItem>
                             </MenuList>
                         </Menu>
                     </Box>
-        </Box>
+                </Box>
             </Container>
         </Box>
     )

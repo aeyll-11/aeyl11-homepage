@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
    <Container>
-    <Box 
+    <Box
         mb={3} 
         m-auto     
         w="100%"
