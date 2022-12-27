@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useRef, Suspense } from 'react';
 import NextLink from 'next/link'
-import {Container, Box, Heading, useColorModeValue, Image, Button}from '@chakra-ui/react';
+import {Container, Box, Heading, useColorModeValue, Image, Button }from '@chakra-ui/react';
 import Section from '../components/section';
 import Paragraph from '../components/paragraph';
 import { ChevronRightIcon } from '@chakra-ui/icons'
@@ -10,7 +10,7 @@ import { BioSection, BioYear } from '../components/bio';
 import Model from '../components/model';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Stage } from '@react-three/drei'
-
+import Loader from '../components/loader';
 
 export default function Home() {
   const router = useRouter();
@@ -24,7 +24,7 @@ export default function Home() {
         w="100%"
         h={[280, 480, 540]}>
       <Canvas shadows dpr={[1, 10]}>
-        <Suspense fallback={null}>
+        <Suspense fallback={<Loader />}>
           <Stage controls={refContainer} preset="rembrandt"></Stage>
           <Model refContainer={refContainer}/>
           <OrbitControls />
@@ -32,12 +32,12 @@ export default function Home() {
       </Canvas>
     </Box>
     <Box
-      borderRadius="lg"
-      mb={6}
-      p={3}
-      textAlign="center"
-      bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-      css={{ backdropFilter: 'blur(10px)' }}>
+        borderRadius="lg"
+        mb={6}
+        p={3}
+        textAlign="center"
+        bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+      >
       Bonjour, Je suis Developpeur Full-Stack résident en France.
     </Box>
 
@@ -74,9 +74,9 @@ export default function Home() {
           Work
         </Heading>
         <Paragraph>
-          Je suis un développeur full-stack basé à Lyon avec une
-        passion pour la création numériques. Jaime la planification et la conception des
-        moyens pour résoudre de real-life problems avec du code. Lorsque je ne suis pas en ligne, Jaime
+          Je suis développeur Full-Stack basé à Lyon avec une
+        passion pour la création. J&lsquo;aime la planification et la conception des
+        moyens pour résoudre de real-life problemes avec du code. Lorsque je ne suis pas en ligne, J&lsquo; aime
         me balader et faire du sport.
         </Paragraph>
         <Box textAlign="center" my={4}>

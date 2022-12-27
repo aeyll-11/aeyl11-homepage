@@ -4,6 +4,7 @@ import { useGLTF } from "@react-three/drei";
 export default function Model({refContainer}: any) {
   const ref = React.useRef();
   const { nodes, materials } = useGLTF("/shiba.glb");
+
   let {innerWidth, innerHeight} = window;
   return (
     <group {...refContainer} dispose={null}>
