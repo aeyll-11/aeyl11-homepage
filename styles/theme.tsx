@@ -25,8 +25,8 @@ const components = {
   },
   Link: {
     baseStyle: (props: Record<string, any> | StyleFunctionProps) => ({
-      color: mode('#3d7aed', '#ffffffff')(props),
-      textUnderlineOffset: 3
+      color: mode('#3d7aed', '#fffffff')(props),
+      textUnderlineOffset: 5
     })
   }
 }

@@ -24,6 +24,7 @@ const LinkItem = ({ href, path, target, children, ...props }: LinkItemProps) => 
             color={active ? '#202023' : inactiveColor}
             target={target}
             {...props}
+            borderRadius="md"
             display="inline-flex"
             alignItems="center"
             style={{ gap: 4 }}
