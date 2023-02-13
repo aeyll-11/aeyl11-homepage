@@ -16,7 +16,7 @@ const Layout = ({ children, title }: Props) => {
   const t = `${title} - Taguine Idriss`
   return (
     <motion.article
-      transition={{ duration: 5, type: 'easeInOut' }}
+      transition={{ duration: 10, type: 'easeInOut' }}
       style={{ position: 'relative' }}
     >
         {title && (
@@ -26,7 +26,7 @@ const Layout = ({ children, title }: Props) => {
             <meta property="og:title" content={t} />
           </Head>
         )}
-        {children}
+          {children}
     </motion.article>
   )
 }

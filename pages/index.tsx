@@ -1,46 +1,19 @@
 import Head from 'next/head';
-import { useRef, Suspense } from 'react';
 import NextLink from 'next/link'
-import {Container, Box, Heading, useColorModeValue, Image, Button }from '@chakra-ui/react';
+import {Box, Heading, Image, Button }from '@chakra-ui/react';
 import Section from '../components/section';
 import Paragraph from '../components/paragraph';
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import { useRouter } from 'next/router';
 import { BioSection, BioYear } from '../components/bio';
-import Model from '../components/model';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Stage } from '@react-three/drei'
-import Loader from '../components/loader';
+import Layout from '../components/layouts/articles';
+
 
 export default function Home() {
   const router = useRouter();
-  const refContainer = useRef();;
 
   return (
-   <Container>
-    <Box
-        mb={3} 
-        m-auto     
-        w="100%"
-        h={[280, 480, 540]}>
-      <Canvas shadows dpr={[1, 10]}>
-        <Suspense fallback={<Loader />}>
-          <Stage controls={refContainer} preset="portrait" shadows="accumulative" adjustCamera={false}></Stage>
-          <Model refContainer={refContainer}/>
-          <OrbitControls autoRotate autoRotateSpeed={0.5}/>
-        </Suspense>
-      </Canvas>
-    </Box>
-    <Box
-        borderRadius="lg"
-        mb={6}
-        p={3}
-        textAlign="center"
-        bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-      >
-      Bonjour, Je suis Developpeur Full-Stack résident en France.
-    </Box>
-
+    <Layout title="Works">
     <Box display={{ md: 'flex' }}>
         <Box flexGrow={1}>
           <Heading as="h2" variant="page-title">
@@ -124,7 +97,6 @@ export default function Home() {
           Art, Tech, Jeux videos, Jiu-Jitsu, Musique.
         </Paragraph>
       </Section>
-      
-   </Container>
+   </Layout>
   )
 }
