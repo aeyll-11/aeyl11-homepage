@@ -12,7 +12,7 @@ const Works = () => {
         </Heading>
         <SimpleGrid column={2} minChildWidth='200px' spacing='40px' >
           <Box w={300}>
-            <Link href=''>
+            <Link href='https://macos-like.vercel.app/'>
               <Image 
                 src='/macos.png' 
                 alt='macoslike' 
